@@ -770,3 +770,327 @@ footer {
     text-align: left;
     margin-bottom: 12px;
 }
+
+
+/* ===== 2BELLAS NEW HEADER ===== */
+
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 15px 40px;
+  min-height: 110px;
+  z-index: 100;
+}
+
+.logo-link {
+  display: block;
+}
+
+.site-logo {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+}
+
+.menu-toggle {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 38px;
+  height: 38px;
+  padding: 3px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #222;
+  transition: 0.3s ease;
+}
+
+.menu-toggle.open span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===== FULL SCREEN MENU ===== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #f8f0f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease,
+              visibility 0.35s ease;
+  z-index: 1001;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 400;
+  text-decoration: none;
+  color: #222;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.mobile-menu a:hover {
+  color: #b67a91;
+  transform: scale(1.05);
+}
+
+/* ===== PHOTOGRAPHY SLIDESHOW ===== */
+
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 480px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease,
+              visibility 1s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 35;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 42px;
+  cursor: pointer;
+  padding: 15px;
+  text-shadow: 0 1px 5px #555;
+}
+
+.slide-arrow.prev {
+  left: 15px;
+}
+
+.slide-arrow.next {
+  right: 15px;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    min-height: 90px;
+    padding: 15px 65px;
+  }
+
+  .site-logo {
+    width: 155px;
+  }
+
+  .hero-slideshow {
+    height: 55vh;
+    min-height: 350px;
+  }
+
+  .slide-arrow {
+    font-size: 30px;
+  }
+}
+
+/* FIRST SLIDESHOW PHOTO ONLY */
+.hero-slide:first-child img {
+    object-position: center 15%;
+}
+
+/* ELEGANT CONTACT SECTION */
+
+#contact {
+  background: #fffaf9;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.contact-container h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.contact-intro {
+  font-size: 17px;
+  margin-bottom: 70px;
+  color: #777;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#contactForm label {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 25px;
+  color: #222;
+  margin: 30px 0 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  background: transparent;
+  padding: 15px;
+  font-size: 17px;
+  color: #222;
+  outline: none;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-bottom: 1px solid #c99ba6;
+}
+
+.contact-submit {
+  align-self: center;
+  margin-top: 55px;
+  padding: 16px 55px;
+  background: #e8cbd0;
+  color: #222;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 2px;
+  transition: background 0.3s ease;
+}
+
+.contact-submit:hover {
+  background: #d9afb8;
+}
+
+
+/* DESIGN PORTFOLIO */
+
+#design {
+  background: #fffaf9;
+  padding: 100px 5%;
+  text-align: center;
+}
+
+.design-heading h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(48px, 7vw, 85px);
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.design-heading p {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 65px;
+}
+
+.design-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px 35px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.design-item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.design-item {
+  overflow: hidden;
+}
+
+.design-item img:hover {
+  transform: scale(1.03);
+}
+
+.design-item h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  margin: 22px 0 10px;
+}
+
+.design-item p {
+  color: #777;
+  font-size: 15px;
+}
+
+@media (max-width: 700px) {
+  .design-gallery {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+}
